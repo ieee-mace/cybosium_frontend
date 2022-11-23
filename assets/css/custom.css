@@ -10,4 +10,15 @@
     top: 14em;
     width: 80%;
 }
+
+img {
+    border-radius: 25px;
+}
+
+.img-1 {
+    right: 6em;
+}
+
+.img-2 {
+    top: 4em;
 }
