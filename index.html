@@ -1323,9 +1323,10 @@
                <p class="desc mb-5">
                   Join our mailing list to stay tuned for all the latest updates
                </p>
-               <form action="#">
+               <form name="submit-to-google-sheet">
                   <input type="text" name="email" class="form-control" placeholder="Enter Your Email">
                   <button class="custom-btn custom-btn2">Submit</button>
+                  <span id="msg"></span>
                </form>
                <div class="dots">
                   <img src="assets/images/dots/dots9.png" alt="Shadow Image" class="cta-dots-1 img-moving-anim1">
@@ -1337,6 +1338,24 @@
             <img src="assets/images/shape/4.svg" alt="Shape">
          </div>
       </section> 
+
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbxuf9GD1eIsUh_t5IpgpRaRUh8BAlWXY6sG-cwnBpUfgu_erofGjo5Pp-xSVigWcjoy/exec'
+  const form = document.forms['submit-to-google-sheet']
+  const msg = document.getElementById("msg")
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => {msg.innerHTML = "Thank you and Stay tuned..."
+      setTimeout(function(){
+         msg.innerHTML = ""
+      },5000)
+      form.reset()
+   })
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
       <!-- cta sec end-->
       
       <!-- review sec start -->
