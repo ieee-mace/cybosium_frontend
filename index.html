@@ -2106,37 +2106,26 @@
                      </div>
                   </div>
                   <div class="col-lg-8 mt-4 mt-lg-0">
-                     <form 
-                     class="contact-form"
-                     method="POST"
-                     action="https://script.google.com/a/macros/ieee.org/s/AKfycbwKXFhbLvi01pDkNU9jZrGpSp4Ya2GR5xrPKb46rLrzF4YBXRvuOzdNSzzylnY3tHai/exec"
-                     >
-                        <div class="row gy-3">
-                           <div class="col-lg-6">
-                              <label for="exampleFormControlInput1" class="form-label">First Name</label>
-                              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Your First Name" required>
-                           </div>
-                           <div class="col-lg-6">
-                              <label for="exampleFormControlInput2" class="form-label">Last Name</label>
-                              <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="Your Last Name" required>
-                           </div>
-                           <div class="col-lg-6">
-                              <label for="exampleFormControlInput3" class="form-label">Email address</label>
-                              <input type="email" class="form-control" id="exampleFormControlInput3" placeholder="Enter Email" required>
-                           </div>
-                           <div class="col-lg-6">
-                              <label for="exampleFormControlInput4" class="form-label">Subject</label>
-                              <input type="text" class="form-control" id="exampleFormControlInput4" placeholder="Enter Subject" required>
-                           </div>
-                        </div>
-                        <div class="mb-3">
-                           
-                        </div>
-                        <div class="text-area col-12 mb-3">
-                           <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-                           <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Enter Your Comment" ></textarea>
-                        </div>
-                        <button class=" custom-btn2" type="submit">Submit</button>
+                     <form action="https://api.web3forms.com/submit" method="POST" id="form">
+              <input type="hidden" name="access_key" value="b3a4109c-4237-4905-8219-cf67642e6fae" />
+                        <div class="row">
+                <div class="col-md-6 form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                </div>
+              </div>
+              <div class="form-group mt-3">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+              </div>
+              <div class="form-group mt-3">
+                <textarea class="form-control" name="message" rows="6" placeholder="Message" required></textarea>
+              </div>
+              <br>
+               <button class=" custom-btn2" type="submit">Submit</button><p class="text-base text-center text-gray-400" id="result"></p>
+               <input type="hidden" name="subject" value="New Query from Website">
+
                      </form>
                   </div>
                </div>
@@ -2387,6 +2376,7 @@
    
    <!-- javaScript -->
    <script src="assets/js/main.js"></script>
+   <script src="assets/js/mail.js"></script>
 
    <!-- color switch -->
    <!-- <script src="./color-switch/switch.js"></script> -->
