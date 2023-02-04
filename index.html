@@ -1323,9 +1323,10 @@
                <p class="desc mb-5">
                   Join our mailing list to stay tuned for all the latest updates
                </p>
-               <form action="#">
+               <form name="submit-to-google-sheet">
                   <input type="text" name="email" class="form-control" placeholder="Enter Your Email">
                   <button class="custom-btn custom-btn2">Submit</button>
+                  <span id="msg"></span>
                </form>
                <div class="dots">
                   <img src="assets/images/dots/dots9.png" alt="Shadow Image" class="cta-dots-1 img-moving-anim1">
@@ -1337,6 +1338,24 @@
             <img src="assets/images/shape/4.svg" alt="Shape">
          </div>
       </section> 
+
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbxuf9GD1eIsUh_t5IpgpRaRUh8BAlWXY6sG-cwnBpUfgu_erofGjo5Pp-xSVigWcjoy/exec'
+  const form = document.forms['submit-to-google-sheet']
+  const msg = document.getElementById("msg")
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => {msg.innerHTML = "Thank you and Stay tuned..."
+      setTimeout(function(){
+         msg.innerHTML = ""
+      },5000)
+      form.reset()
+   })
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
       <!-- cta sec end-->
       
       <!-- review sec start -->
@@ -1562,12 +1581,22 @@
       <section id="pricing" class="pricing-sec">
          <div class="container">
             <div class="section-head col-xl-8 m-auto text-center px-5">
-               <span class="label">Choose The Best Ticket For You</span>
+               
                <h2 class="title mb-4">
-                  Registrations opening soon. Hold on tight.
+                  Grab Your Tickets
+               </h2>
+               <span class="label">Choose The Best Ticket For You</span>
+               <p class="desc mb-5">
+                  <br>
+               </p>
+            </div>
+            <div class="section-head col-xl-8 m-auto text-center px-5">
+               
+               <h2 class="title mb-4">
+                 Online Phase
                </h2>
                <p class="desc mb-5">
-                  We shall begin accepting applications shortly. Watch out for more updates.
+                  Students and Professionals
                </p>
             </div>
             <div class="pricing-cart-wrap">
@@ -1576,14 +1605,14 @@
                      <div class="card  h-100" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
                         <div class="card-body">
                            <span class="card-lable"><i class="fa-sharp fa-solid fa-circle"></i>IEEE RAS Members</span>
-                           <h3 class="price-pacage">$TBD <span class="regular-price">/ regular price</span>
+                           <h3 class="price-pacage">$10 <span class="regular-price">/ ₹ 800 </span>
                            </h3>
                            <!-- <ul>
-                              <li><a href="#"><i class="fa-solid fa-check"></i>Regular price: $190 until Sept 20</a></li>
+                              <li><a href="#"><i class="fa-solid fa-check"></i>₹ 300 : $190 until Sept 20</a></li>
                               <li><a href="#"><i class="fa-solid fa-check"></i>Last minute price: $490 until the end</a></li>
                            </ul> -->
                            <div class="card-btn my-5">
-                              <button class="custom-btn custom-btn2 mb-3">Opening Soon</button>
+                              <button class="custom-btn custom-btn2 mb-3"><a href="https://unstop.com/p/cybosium-mar-athanasius-college-of-engineering-mace-kerala-595134">Register Now</a></button>
                               <!-- <span class="card-footer-label">When you don't need a VAT invoice</span> -->
                            </div>
                         </div>
@@ -1593,14 +1622,14 @@
                      <div class="card h-100" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
                         <div class="card-body">
                            <span class="card-lable"><i class="fa-sharp fa-solid fa-circle"></i>IEEE Members</span>
-                           <h3 class="price-pacage">$TBD <span class="regular-price">/ regular price</span>
+                           <h3 class="price-pacage">$15 <span class="regular-price">/ ₹ 1200 </span>
                            </h3>
                            <!-- <ul>
-                              <li><a href="#"><i class="fa-solid fa-check"></i>Regular price: $190 until Sept 20</a></li>
+                              <li><a href="#"><i class="fa-solid fa-check"></i>₹ 300 : $190 until Sept 20</a></li>
                               <li><a href="#"><i class="fa-solid fa-check"></i>Last minute price: $490 until the end</a></li>
                            </ul> -->
                            <div class="card-btn my-5">
-                              <button class="custom-btn custom-btn2 mb-3">Opening Soon</button>
+                              <button class="custom-btn custom-btn2 mb-3"><a href="https://unstop.com/p/cybosium-mar-athanasius-college-of-engineering-mace-kerala-595134">Register Now</a></button>
                               <!-- <span class="card-footer-label">When you don't need a VAT invoice</span> -->
                            </div>
                         </div>
@@ -1610,14 +1639,204 @@
                      <div class="card h-100" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
                         <div class="card-body">
                            <span class="card-lable"><i class="fa-sharp fa-solid fa-circle"></i>Non-IEEE Members</span>
-                           <h3 class="price-pacage">$TBD <span class="regular-price">/ regular price</span>
+                           <h3 class="price-pacage">$23 <span class="regular-price">/ ₹ 1800 </span>
                            </h3>
                            <!-- <ul>
-                              <li><a href="#"><i class="fa-solid fa-check"></i>Regular price: $190 until Sept 20</a></li>
+                              <li><a href="#"><i class="fa-solid fa-check"></i>₹ 300 : $190 until Sept 20</a></li>
                               <li><a href="#"><i class="fa-solid fa-check"></i>Last minute price: $490 until the end</a></li>
                            </ul> -->
                            <div class="card-btn my-5">
-                              <button class="custom-btn custom-btn2 mb-3">Opening Soon</button>
+                              <button class="custom-btn custom-btn2 mb-3"><a href="https://unstop.com/p/cybosium-mar-athanasius-college-of-engineering-mace-kerala-595134">Register Now</a></button>
+                              <!-- <span class="card-footer-label">When you don't need a VAT invoice</span> -->
+                           </div>
+                           
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="dots img-moving-anim1">
+                  <img src="assets/images/dots/dots12.png" alt="Shadow Image">
+               </div>
+            </div>
+            <br>
+            <div class="section-head col-xl-8 m-auto text-center px-5">
+               <!--<span class="label">Choose The Best Ticket For You</span>-->
+               <h2 class="title mb-4">
+                 Offline phase
+               </h2>
+               <p class="desc mb-5">
+                  Students
+               </p>
+            </div>
+            <div class="pricing-cart-wrap">
+               <div class="row row-cols-1 row-cols-lg-3 g-4">
+                  <div class="col col-md-6 col-lg-4">
+                     <div class="card  h-100" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+                        <div class="card-body">
+                           <span class="card-lable"><i class="fa-sharp fa-solid fa-circle"></i>IEEE RAS Members</span>
+                           <h3 class="price-pacage">$57 <span class="regular-price">/ ₹ 4500 </span>
+                           </h3>
+                           <!-- <ul>
+                              <li><a href="#"><i class="fa-solid fa-check"></i>₹ 300 : $190 until Sept 20</a></li>
+                              <li><a href="#"><i class="fa-solid fa-check"></i>Last minute price: $490 until the end</a></li>
+                           </ul> -->
+                           <div class="card-btn my-5">
+                              <button class="custom-btn custom-btn2 mb-3"><a href="https://unstop.com/p/cybosium-mar-athanasius-college-of-engineering-mace-kerala-595134">Register Now</a></button>
+                              <!-- <span class="card-footer-label">When you don't need a VAT invoice</span> -->
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col col-md-6 col-lg-4">
+                     <div class="card h-100" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+                        <div class="card-body">
+                           <span class="card-lable"><i class="fa-sharp fa-solid fa-circle"></i>IEEE Members</span>
+                           <h3 class="price-pacage">$63 <span class="regular-price">/ ₹ 5000 </span>
+                           </h3>
+                           <!-- <ul>
+                              <li><a href="#"><i class="fa-solid fa-check"></i>₹ 300 : $190 until Sept 20</a></li>
+                              <li><a href="#"><i class="fa-solid fa-check"></i>Last minute price: $490 until the end</a></li>
+                           </ul> -->
+                           <div class="card-btn my-5">
+                              <button class="custom-btn custom-btn2 mb-3"><a href="https://unstop.com/p/cybosium-mar-athanasius-college-of-engineering-mace-kerala-595134">Register Now</a></button>
+                              <!-- <span class="card-footer-label">When you don't need a VAT invoice</span> -->
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col col-md-6 col-lg-4">
+                     <div class="card h-100" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+                        <div class="card-body">
+                           <span class="card-lable"><i class="fa-sharp fa-solid fa-circle"></i>Non-IEEE Members</span>
+                           <h3 class="price-pacage">$75 <span class="regular-price">/ ₹ 6000 </span>
+                           </h3>
+                           <!-- <ul>
+                              <li><a href="#"><i class="fa-solid fa-check"></i>₹ 300 : $190 until Sept 20</a></li>
+                              <li><a href="#"><i class="fa-solid fa-check"></i>Last minute price: $490 until the end</a></li>
+                           </ul> -->
+                           <div class="card-btn my-5">
+                              <button class="custom-btn custom-btn2 mb-3"><a href="https://unstop.com/p/cybosium-mar-athanasius-college-of-engineering-mace-kerala-595134">Register Now</a></button>
+                              <!-- <span class="card-footer-label">When you don't need a VAT invoice</span> -->
+                           </div>
+                           
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="dots img-moving-anim1">
+                  <img src="assets/images/dots/dots12.png" alt="Shadow Image">
+               </div>
+            </div>
+            <br>
+            <div class="section-head col-xl-8 m-auto text-center px-5">
+               <!--<span class="label">Choose The Best Ticket For You</span>-->
+               <h2 class="title mb-4">
+                  
+               </h2>
+               <p class="desc mb-5">
+                  Professionals
+               </p>
+            </div>
+            <div class="pricing-cart-wrap">
+               <div class="row row-cols-1 row-cols-lg-3 g-4" style="display:flex; justify-content: space-around;">
+                  <div class="col col-md-6 col-lg-4">
+                     <div class="card  h-100" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+                        <div class="card-body">
+                           <span class="card-lable"><i class="fa-sharp fa-solid fa-circle"></i>IEEE Members</span>
+                           <h3 class="price-pacage">$88 <span class="regular-price">/ ₹ 7000 </span>
+                           </h3>
+                           <!-- <ul>
+                              <li><a href="#"><i class="fa-solid fa-check"></i>₹ 300 : $190 until Sept 20</a></li>
+                              <li><a href="#"><i class="fa-solid fa-check"></i>Last minute price: $490 until the end</a></li>
+                           </ul> -->
+                           <div class="card-btn my-5">
+                              <button class="custom-btn custom-btn2 mb-3"><a href="https://unstop.com/p/cybosium-mar-athanasius-college-of-engineering-mace-kerala-595134">Register Now</a></button>
+                              <!-- <span class="card-footer-label">When you don't need a VAT invoice</span> -->
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col col-md-6 col-lg-4">
+                     <div class="card h-100" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+                        <div class="card-body">
+                           <span class="card-lable"><i class="fa-sharp fa-solid fa-circle"></i>Non-IEEE Members</span>
+                           <h3 class="price-pacage">$100 <span class="regular-price">/ ₹ 8000 </span>
+                           </h3>
+                           <!-- <ul>
+                              <li><a href="#"><i class="fa-solid fa-check"></i>₹ 300 : $190 until Sept 20</a></li>
+                              <li><a href="#"><i class="fa-solid fa-check"></i>Last minute price: $490 until the end</a></li>
+                           </ul> -->
+                           <div class="card-btn my-5">
+                              <button class="custom-btn custom-btn2 mb-3"><a href="https://unstop.com/p/cybosium-mar-athanasius-college-of-engineering-mace-kerala-595134">Register Now</a></button>
+                              <!-- <span class="card-footer-label">When you don't need a VAT invoice</span> -->
+                           </div>
+                           
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="dots img-moving-anim1">
+                  <img src="assets/images/dots/dots12.png" alt="Shadow Image">
+               </div>
+            </div>
+            <br>
+            <div class="section-head col-xl-8 m-auto text-center px-5">
+               
+               <h2 class="title mb-4">
+                 Student Expo
+               </h2>
+               <p class="desc mb-5">
+                  
+               </p>
+            </div>
+            <div class="pricing-cart-wrap">
+               <div class="row row-cols-1 row-cols-lg-3 g-4">
+                  <div class="col col-md-6 col-lg-4">
+                     <div class="card  h-100" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+                        <div class="card-body">
+                           <span class="card-lable"><i class="fa-sharp fa-solid fa-circle"></i>IEEE Members</span><br>
+                           <h3 class="price-pacage text-center">₹ 300 <span class="regular-price"></span>
+                           </h3>
+                           <!-- <ul>
+                              <li><a href="#"><i class="fa-solid fa-check"></i>₹ 300 : $190 until Sept 20</a></li>
+                              <li><a href="#"><i class="fa-solid fa-check"></i>Last minute price: $490 until the end</a></li>
+                           </ul> -->
+                           <div class="card-btn my-5">
+                              <button class="custom-btn custom-btn2 mb-3"><a href="https://unstop.com/p/cybosium-mar-athanasius-college-of-engineering-mace-kerala-595134">Register Now</a></button>
+                              <!-- <span class="card-footer-label">When you don't need a VAT invoice</span> -->
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col col-md-6 col-lg-4">
+                     <div class="card h-100" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+                        <div class="card-body">
+                           <span class="card-lable"><i class="fa-sharp fa-solid fa-circle"></i>Non IEEE Members</span><br>
+                           <h3 class="price-pacage text-center">₹ 400 <span class="regular-price"></span>
+                           </h3>
+                           <!-- <ul>
+                              <li><a href="#"><i class="fa-solid fa-check"></i>₹ 300 : $190 until Sept 20</a></li>
+                              <li><a href="#"><i class="fa-solid fa-check"></i>Last minute price: $490 until the end</a></li>
+                           </ul> -->
+                           <div class="card-btn my-5">
+                              <button class="custom-btn custom-btn2 mb-3"><a href="https://unstop.com/p/cybosium-mar-athanasius-college-of-engineering-mace-kerala-595134">Register Now</a></button>
+                              <!-- <span class="card-footer-label">When you don't need a VAT invoice</span> -->
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col col-md-6 col-lg-4">
+                     <div class="card h-100" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+                        <div class="card-body">
+                           <span class="card-lable"><i class="fa-sharp fa-solid fa-circle"></i>Non Students</span><br>
+                           <h3 class="price-pacage text-center">₹ 500 <span class="regular-price"></span>
+                           </h3>
+                           <!-- <ul>
+                              <li><a href="#"><i class="fa-solid fa-check"></i>₹ 300 : $190 until Sept 20</a></li>
+                              <li><a href="#"><i class="fa-solid fa-check"></i>Last minute price: $490 until the end</a></li>
+                           </ul> -->
+                           <div class="card-btn my-5">
+                              <button class="custom-btn custom-btn2 mb-3"><a href="https://unstop.com/p/cybosium-mar-athanasius-college-of-engineering-mace-kerala-595134">Register Now</a></button>
                               <!-- <span class="card-footer-label">When you don't need a VAT invoice</span> -->
                            </div>
                            
@@ -1906,37 +2125,26 @@
                      </div>
                   </div>
                   <div class="col-lg-8 mt-4 mt-lg-0">
-                     <form 
-                     class="contact-form"
-                     method="POST"
-                     action="https://script.google.com/a/macros/ieee.org/s/AKfycbwKXFhbLvi01pDkNU9jZrGpSp4Ya2GR5xrPKb46rLrzF4YBXRvuOzdNSzzylnY3tHai/exec"
-                     >
-                        <div class="row gy-3">
-                           <div class="col-lg-6">
-                              <label for="exampleFormControlInput1" class="form-label">First Name</label>
-                              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Your First Name" required>
-                           </div>
-                           <div class="col-lg-6">
-                              <label for="exampleFormControlInput2" class="form-label">Last Name</label>
-                              <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="Your Last Name" required>
-                           </div>
-                           <div class="col-lg-6">
-                              <label for="exampleFormControlInput3" class="form-label">Email address</label>
-                              <input type="email" class="form-control" id="exampleFormControlInput3" placeholder="Enter Email" required>
-                           </div>
-                           <div class="col-lg-6">
-                              <label for="exampleFormControlInput4" class="form-label">Subject</label>
-                              <input type="text" class="form-control" id="exampleFormControlInput4" placeholder="Enter Subject" required>
-                           </div>
-                        </div>
-                        <div class="mb-3">
-                           
-                        </div>
-                        <div class="text-area col-12 mb-3">
-                           <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-                           <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Enter Your Comment" ></textarea>
-                        </div>
-                        <button class=" custom-btn2" type="submit">Submit</button>
+                     <form action="https://api.web3forms.com/submit" method="POST" id="form">
+              <input type="hidden" name="access_key" value="b3a4109c-4237-4905-8219-cf67642e6fae" />
+                        <div class="row">
+                <div class="col-md-6 form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                </div>
+              </div>
+              <div class="form-group mt-3">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+              </div>
+              <div class="form-group mt-3">
+                <textarea class="form-control" name="message" rows="6" placeholder="Message" required></textarea>
+              </div>
+              <br>
+               <button class=" custom-btn2" type="submit">Submit</button><p class="text-base text-center text-gray-400" id="result"></p>
+               <input type="hidden" name="subject" value="New Query from Website">
+
                      </form>
                   </div>
                </div>
@@ -2187,6 +2395,7 @@
    
    <!-- javaScript -->
    <script src="assets/js/main.js"></script>
+   <script src="assets/js/mail.js"></script>
 
    <!-- color switch -->
    <!-- <script src="./color-switch/switch.js"></script> -->
