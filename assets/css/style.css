@@ -1539,6 +1539,18 @@ hr {
       -ms-flex-pack: center;
           justify-content: center;
 }
+.pricing-cart-wrap .card .card-body .card-btn button a{
+
+  display: inline-block;
+
+  -webkit-box-pack: center;
+
+      -ms-flex-pack: center;
+
+          justify-content: center;
+  color:#fff;
+
+}
 .pricing-cart-wrap .card .card-body .card-btn .card-footer-label {
   display: inline-block;
   font-size: 14px;
