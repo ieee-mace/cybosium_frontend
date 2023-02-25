@@ -92,6 +92,7 @@ h2 {
   display: -ms-flexbox;
   display: flex;
   margin-left: -30px;
+  justify-content: center
 }
 .social li:not(:last-child) {
   margin-right: 8px;
@@ -350,7 +351,7 @@ hr {
 }
 .footer-area .footer-top .footer-info .footer-logo {
   margin-bottom: 30px;
-  display: block;
+  display: flex;
 }
 .footer-area .footer-top .footer-info .footer-desc {
   font-family: "Outfit";
@@ -1366,7 +1367,7 @@ hr {
   margin-bottom: 30px;
 }
 .review-sec .review-cards-wrap .review-card-items-wrap .review-card-item .profile .thumb {
-  margin-right: 20px;
+  margin-right: px;
 }
 .review-sec .review-cards-wrap .review-card-items-wrap .review-card-item .profile .content .name {
   font-size: 18px;
