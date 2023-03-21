@@ -40,9 +40,9 @@
     dots: true,
     infinite: true,
     autoplay: true,
-    speed: 300,
+    speed: 500,
     slidesToShow: 3,
-    slidesToScroll: 3,
+    slidesToScroll: 1,
     prevArrow: ".main-left-arrow",
     nextArrow: ".main-right-arrow",
     responsive: [
